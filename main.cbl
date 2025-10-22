@@ -1,18 +1,24 @@
-       IDENTIFICATION DIVISION.
-       PROGRAM-ID. BONJOUR.
-       DATA DIVISION.
-       WORKING-STORAGE SECTION.
-       01 N PIC 9(8).
-       01 SQUARE PIC 9(8) VALUE 0.
-
+       identification division.
+       program-id. my_program.
+       data division.
        local-storage section.
-       01 I PIC 9(4) VALUE 0.
+
+       working-storage section.
+       
+       01 WS-STUDENTS.
+           02 WS-STUDENT OCCURS 6 TIMES.
+               03 WS-STUDENT-NAME PIC X(25) VALUE "John".
+               03 WS-STUDENT-SURNAME PIC X(25) VALUE "Doe".
+               03 WS-STUDENT-ID PIC 9(8) VALUE 0.
 
        procedure division.
-           display "Donne moi un nombre"
+           display "Entre le nombre de puissance de 2 ajoute"
            accept N
-
-           perform varying I from 0 by 1 until I>N
-               display "i=",I
+           perform until I>N
+               add I-VAL to LS-SUM 
+               divide I-VAL by 2 giving I-VAL
+               display "La valeur de la somme apres ",N "iteration",
+                   "est de: ",LS-SUM
+               add 1 to I
            end-perform.
        stop run.
