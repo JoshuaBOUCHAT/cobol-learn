@@ -4,6 +4,7 @@
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
+           
 
        DATA DIVISION.
        
@@ -12,7 +13,12 @@
        WORKING-STORAGE SECTION.
        
        LOCAL-STORAGE SECTION.
+       01 N PIC 99.
+       01 RES PIC 9(9) VALUE 1.
        
        PROCEDURE DIVISION.
-           DISPLAY "Hello !"
+           DISPLAY "Entre un nombre"
+           ACCEPT N
+           
+           
        STOP RUN.
