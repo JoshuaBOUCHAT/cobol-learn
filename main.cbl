@@ -19,6 +19,10 @@
        PROCEDURE DIVISION.
            DISPLAY "Entre un nombre"
            ACCEPT N
-           
-           
+
+           PERFORM UNTIL N EQUAL 0
+               MULTIPLY RES BY N GIVING RES
+               SUBTRACT 1 FROM N
+           END-PERFORM.
+           DISPLAY "La factoriel vaut : ",RES   
        STOP RUN.
